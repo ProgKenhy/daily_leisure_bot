@@ -21,7 +21,8 @@ config.set_main_option("sqlalchemy.url", settings.database.SYNC_URL)
 # add your model's MetaData object here
 # for 'autogenerate' support
 from config.models import Base
-from users.models import User
+from users.models import *
+from feed.models import *
 target_metadata = Base.metadata
 
 

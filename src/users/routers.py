@@ -23,18 +23,19 @@ async def cmd_start(message: Message, session: AsyncSession):
         session.add(new_user)
         await session.commit()
 
-    keyboard = ReplyKeyboardMarkup(
-        keyboard=[
-            [KeyboardButton(text="📍 Отправить местоположение", request_location=True)]
-        ],
-        resize_keyboard=True,
-        one_time_keyboard=True
-    )
+    # keyboard = ReplyKeyboardMarkup(
+    #     keyboard=[
+    #         [KeyboardButton(text="📍 Отправить местоположение", request_location=True)]
+    #     ],
+    #     resize_keyboard=True,
+    #     one_time_keyboard=True
+    # )
 
     await message.answer(
-        "👋 Привет! Я помогу найти интересные места рядом.\n\n"
-        "📍 Поделись своим местоположением, чтобы я мог предложить варианты рядом с тобой.",
-        reply_markup=keyboard
+        "👋 Привет! Я помогу найти интересные места рядом.\n"
+        "Можешь использовать /feed для поиска мест рядом!\n",
+        # "📍 Поделись своим местоположением, чтобы я мог предложить варианты рядом с тобой.",
+        # reply_markup=keyboard
     )
 
 

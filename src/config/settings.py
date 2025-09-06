@@ -37,5 +37,6 @@ class Settings(MyBaseSettings):
 
     DEBUG: bool = Field(alias="DEBUG", default=False)
     ENVIRONMENT: str = Field(alias="ENVIRONMENT", default="development")
+    ADMIN_IDS: str = Field(alias="ADMIN_IDS", default=[])
 
 settings = Settings()

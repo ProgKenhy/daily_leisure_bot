@@ -20,6 +20,7 @@ async def main():
 
     dp.include_router(main_router)
     dp.message.middleware(DatabaseMiddleware())
+    dp.callback_query.middleware(DatabaseMiddleware())
 
     try:
         await bot.delete_webhook(drop_pending_updates=True)
